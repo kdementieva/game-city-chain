@@ -1,33 +1,33 @@
-# Игра "Города"
+# Game "Cities"
 
-Этот проект реализует консольную игру "Города" на языке Python. Игра основана на правилах, где каждый игрок должен назвать город, начинающийся на последнюю букву города, названного предыдущим игроком. Если игрок не может назвать подходящий город, игра заканчивается.
+This project implements a console-based game called "Cities" in Python. The game is based on the rules where each player must name a city that starts with the last letter of the city named by the previous player. If a player cannot name a suitable city, the game ends.
 
-## Описание
+## Description
 
-### Основные файлы
+### Main Files
 
-- `cities.txt` - текстовый файл, содержащий список городов. Используется программой для подбора случайных городов.
-- `answers.txt` - файл, в который записываются города, уже использованные в игре, чтобы избежать их повторения.
+- `cities.txt` - a text file containing a list of cities. It is used by the program to pick random cities.
+- `answers.txt` - a file that records cities already used in the game to avoid repetition.
 
-### Логика игры
+### Game Logic
 
-1. Компьютер случайным образом выбирает город из списка `cities.txt`.
-2. Игрок вводит город, который должен начинаться на последнюю букву предыдущего города.
-3. Если город был уже использован, не существует или не соответствует правилам, игроку дается еще одна попытка.
-4. Игра заканчивается, если:
-   - У игрока заканчиваются попытки (5 ошибок).
-   - Компьютер не может найти подходящий город.
+1. The computer randomly selects a city from the `cities.txt` list.
+2. The player enters a city that should start with the last letter of the previous city.
+3. If the city has already been used, does not exist, or does not follow the rules, the player gets another attempt.
+4. The game ends if:
+   - The player runs out of attempts (5 errors).
+   - The computer cannot find a suitable city.
 
-### Основные функции
+### Main Functions
 
-- **`get_city(letter='')`** — выбирает случайный город из списка городов `cities.txt`. Если передана буква, ищет город, начинающийся на эту букву.
-- **`check_city(user_city, opponent_city)`** — проверяет, существует ли введенный пользователем город, не был ли он уже использован, и начинается ли он на правильную букву.
+- **`get_city(letter='')`** — selects a random city from the `cities.txt` list. If a letter is provided, it searches for a city starting with that letter.
+- **`check_city(user_city, opponent_city)`** — checks if the city entered by the user exists, has not already been used, and starts with the correct letter.
 
-### Условия победы и поражения
+### Win and Loss Conditions
 
-- Победа: Компьютер не может найти подходящий город для ответа.
-- Поражение: Игрок ошибается 5 раз подряд.
+- Win: The computer cannot find a suitable city to respond with.
+- Loss: The player makes 5 consecutive mistakes.
 
-### Сохранение результатов
+### Saving Results
 
-Игра сохраняет все использованные города в файл `answers.txt`, который можно использовать для анализа или проверки повторных городов.
+The game saves all used cities in the `answers.txt` file, which can be used for analysis or checking for repeated cities.
